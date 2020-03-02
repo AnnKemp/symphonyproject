@@ -38,7 +38,7 @@ if (isset($_GET['type'])) {
 
     if ($_GET['type'] == 'ERROR') {
         $logger->pushHandler(new StreamHandler(__DIR__ . '/logs/warning.log', Logger::ERROR));
-        $logger->pushHandler(new NativeMailerHandler('yolo@gmail.com', 'poggers', 'matthijs'));
+        $logger->pushHandler(new NativeMailerHandler('ann.kemp@gmail.com', 'mail', 'ann'));
         $logger->error($_GET['message'] ?? "");
     } elseif ($_GET['type'] == 'CRITICAL') {
         $logger->pushHandler(new StreamHandler(__DIR__ . '/logs/warning.log', Logger::CRITICAL));
@@ -57,4 +57,4 @@ if (isset($_GET['type'])) {
 }
 
 // You can now use your logger
-require_once 'buttons.html';
+require_once 'buttons.php';
